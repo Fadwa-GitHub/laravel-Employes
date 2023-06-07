@@ -17,9 +17,6 @@ use App\Http\Controllers\EmployesController;
 |
 */
 
-/*Route::get('/', function () {
-    return view('home');
-});*/
 
 Route::controller(UserController::class)->group(function() {
     Route::get('/register', 'register')->name('register');
