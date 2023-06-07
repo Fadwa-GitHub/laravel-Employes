@@ -24,11 +24,11 @@ Add new employes | Laravel Employes App
                         @csrf
                         <div class="form-group mb-3">
                             <label for="fullname" class="form-label fw-bold">Full Name</label>
-                            <input type="text" name="fullname" value="{{old('fullname')}}" placeholder="Full Name" class="form-control">
+                            <input type="text" name="fullname"  value="{{old('fullname')}}" placeholder="Full Name" class="form-control">
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label fw-bold" for="registration_number">Registration Number</label>
-                            <input type="text" name="registration_number" value="{{old('registration_number')}}"  placeholder="Registration Number" class="form-control">
+                            <input type="text" name="registration_number" maxlength="8" value="{{old('registration_number')}}"  placeholder="Registration Number" class="form-control">
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label fw-bold" for="depart">Departement</label>
@@ -40,7 +40,7 @@ Add new employes | Laravel Employes App
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label fw-bold" for="phone">Phone</label>
-                            <input type="text" class="form-control" value="{{old('phone')}}"  placeholder="Phone" name="phone">
+                            <input type="text" class="form-control" value="{{old('phone')}}"  placeholder="Phone" name="phone" maxlength="10">
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label fw-bold" for="adress">Address</label>

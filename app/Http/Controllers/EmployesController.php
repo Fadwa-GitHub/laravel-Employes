@@ -33,14 +33,14 @@ class EmployesController extends Controller
     {
         $this->validate($request, [
             'registration_number' => 'required|numeric|unique:employes,registration_number',
-            'fullname' => 'required',
+            'fullname' => 'required|unique:employes,fullname',
             'depart' => 'required',
             'hire_date' => 'required',
             'phone' => 'required|numeric',
             'adress' => 'required',
-            'city' => 'required',
-            
+            'city' => 'required'
         ]);
+
         Employe::create($request->except(['_token']));
         return redirect('/employes/index')->with([
             'success' => 'Employe added successfully'
@@ -95,10 +95,24 @@ class EmployesController extends Controller
      */
     public function destroy($id)
     {
-        $employe = Employe::where('registration_number', $id)->first();
+        $employe = Employe::where('registration_number', $id);
         $employe->delete();
         return redirect('/employes/index')->with([
             'success' => 'Employe deleted successfully'
+        ]);
+    }
+
+    public function vacationRequest($id){
+        $employe = Employe::where('registration_number', $id)->first();
+        return view('employes.vacation-request')->with([
+            'employe' => $employe
+        ]);
+    }
+
+    public function certificateRequest($id){
+        $employe = Employe::where('registration_number', $id)->first();
+        return view('employes.certificate-request')->with([
+            'employe' => $employe
         ]);
     }
 }

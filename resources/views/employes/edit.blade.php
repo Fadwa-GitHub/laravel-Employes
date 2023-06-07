@@ -16,7 +16,7 @@ Update employes | Laravel Employes App
                 <div class="card my-5">
                     <div class="card-header">
                         <div class="text-center font-weight-bold text-uppercase">
-                            <h4>Update employes</h4>
+                            <h4>{{$employe->fullname}}</h4>
                         </div>
                     </div>
                 <div class="card-body">
@@ -25,7 +25,7 @@ Update employes | Laravel Employes App
                         @method('PUT')
                         <div class="form-group mb-3">
                             <label for="fullname" class="form-label fw-bold">Full Name</label>
-                            <input type="text" name="fullname" value="{{old('fullname',$employe->fullname)}}" placeholder="Full Name" class="form-control">
+                            <input type="text" name="fullname" value="{{old('fullname',$employe->fullname)}}" placeholder="Full Name"  class="form-control">
                         </div>
                         <div class="form-group mb-3">
                             <label class="form-label fw-bold" for="registration_number">Registration Number</label>

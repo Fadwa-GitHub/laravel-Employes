@@ -15,4 +15,6 @@ class Employe extends Model
         'depart', 'hire_date',
         'adress', 'phone', 'city'
     ]; 
+
+   
 }
